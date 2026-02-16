@@ -1,7 +1,6 @@
 /*
 This code defines a simulation of a robot delivering parcels in a village.
 */
-// ====== GRAPH BUILDING CODE IS AS FOLLOWS =====
 const roads = [
   "Alice's House-Bob's House",   "Alice's House-Cabin",
   "Alice's House-Post Office",   "Bob's House-Town Hall",
@@ -30,13 +29,12 @@ function buildGraph(edges) {
 
 const roadGraph = buildGraph(roads);
 
-// ======== VILLAGE STATE CLASS ======
+// VILLAGE STATE CLASS
 class VillageState {
   constructor(place, parcels) {
     this.place = place;
     this.parcels = parcels;
   }
-
   move(destination) {
     if (!roadGraph[this.place].includes(destination)) {
       return this;
